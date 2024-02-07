@@ -11,5 +11,9 @@ public class StringBuilders {
     // set char at index 0
     sb.setCharAt(0, 'p');
     System.out.println(sb);
+
+    //insert char at index
+    sb.insert(2, 'n');
+    System.out.println(sb);
   }
 }
