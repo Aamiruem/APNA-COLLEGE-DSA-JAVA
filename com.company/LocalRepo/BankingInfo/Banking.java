@@ -1,4 +1,4 @@
-package BANKINFO;
+package BankingInfo;
 
 class Account {
     private String name;

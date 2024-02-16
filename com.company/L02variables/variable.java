@@ -1,7 +1,7 @@
 /*public class variable {
 
   public static void main(String[] args) {
-    
+
     int first = 10;
     int second = 20;
 
@@ -73,7 +73,7 @@ public class variable{
     public static void main(String[] args){
         variable v = new variable();
         v.instanceVariable();
-    } 
+    }
 
 }*/
 
@@ -102,7 +102,7 @@ public class variable{
     public static void main(String[] args){
         name = "Aamir";
         marks = 98;
-        System.out.println(name +"Scored" + marks + "%"); 
+        System.out.println(name +"Scored" + marks + "%");
     }
 }
 
@@ -185,7 +185,7 @@ public class variable {
     Scanner sc = new Scanner(System.in);
     String name = sc.nextLine();
 
-    
+
     System.out.println(name);
   }
 }
@@ -202,13 +202,13 @@ public class variable {
 
   public static void main(String[] args) {
     // input variables
-    
+
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
 
     int b = sc.nextInt();
     int sum = a + b;
-    
+
     System.out.println(sum);
   }
 }
@@ -242,7 +242,7 @@ import java.util.*;
 public class variable {
 
     public static void main(String[] args) {
-    int n;
+    int n = 0;
     int st = 1;
     int sp = n - 1;
 
