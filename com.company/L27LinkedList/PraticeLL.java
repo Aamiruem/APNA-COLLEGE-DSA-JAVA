@@ -1,15 +1,12 @@
-// package L27LinkedList;
-
-// import java.util.LinkedList;
-
-public class LinkedList {
+public class PraticeLL {
     Node head;
     private int size;
 
-    LinkedList(){
-        this.size = 0;
+    PraticeLL(){
+        int size = 0;
     }
-    public class Node {
+
+    public class Node{
         String data;
         Node next;
 
@@ -20,13 +17,8 @@ public class LinkedList {
         }
     }
 
-    //add first, last
-    public void addFirst(String data) {
+    public void addFisrt(String data) {
         Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
         newNode.next = head;
         head = newNode;
     }
@@ -37,38 +29,34 @@ public class LinkedList {
             head = newNode;
             return;
         }
-        Node currNode = head;
-        while (currNode.next != null) {
-            currNode = currNode.next;
+        Node lastNode = head;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
         }
-        currNode.next = newNode;
+        lastNode.next = newNode;
     }
-    //print
+
     public void printList() {
-        if (head == null) {
-            System.out.println("list is empty");
-            return;
-        }
         Node currNode = head;
         while (currNode != null) {
-            System.out.print(currNode.data + "->");
+            System.out.println(currNode.data + " -> ");
             currNode = currNode.next;
         }
-        System.out.println("NULL");
+        System.out.println("null");
     }
 
-    public void deleteFirst() {
+    public void removeFirst() {
         if (head == null) {
-            System.out.println("The list is empty");
+            System.out.println("Empty list,  Nothing to delete");
             return;
         }
+        head = this.head.next;
         size--;
-        head = head.next;
     }
 
-    public void deleteLast() {
+    public void removeLast() {
         if (head == null) {
-            System.out.println("The list is empty");
+            System.out.println("Empty list, Nothing to delete");
             return;
         }
         size--;
@@ -76,37 +64,38 @@ public class LinkedList {
             head = null;
             return;
         }
-        Node secondLast = head;
+        Node currNode = head;
         Node lastNode = head.next;
+
         while (lastNode.next != null) {
+            currNode = currNode.next;
             lastNode = lastNode.next;
-            secondLast = secondLast.next;
         }
-        secondLast.next = null;
+        currNode.next = null;
     }
 
     public int getSize() {
         return size;
     }
-
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        list.addFirst("a");
-        list.addFirst("is");
-        list.printList();
+        PraticeLL list = new PraticeLL();
 
+        list.addLast("is");
+        list.addLast("a");
         list.addLast("list");
+
         list.printList();
 
-        list.addFirst("This");
-        list.printList();
+        list.addFisrt("This");
 
-        list.deleteFirst();
-        list.printList();
-
-        list.deleteLast();
         list.printList();
 
         System.out.println(list.getSize());
+        list.removeFirst();
+
+        list.printList();
+
+        list.removeLast();
+        list.printList();
     }
 }

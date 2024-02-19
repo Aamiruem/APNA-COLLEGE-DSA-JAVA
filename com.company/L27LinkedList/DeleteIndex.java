@@ -1,6 +1,6 @@
 // Take elements(numbers in the range of 1-50) of a Linked List as input from the user. Delete all nodes which have values greater than 25.
 
-package L27LinkedList;
+// package L27LinkedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;
