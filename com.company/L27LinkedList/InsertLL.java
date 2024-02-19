@@ -1,4 +1,3 @@
-
 public class InsertLL {
 
     Node head;
