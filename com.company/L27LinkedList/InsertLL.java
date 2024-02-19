@@ -1,12 +1,14 @@
-public class PraticeLL {
+
+public class InsertLL {
+
     Node head;
     private int size;
 
-    PraticeLL(){
+    InsertLL(){
         int size = 0;
     }
 
-    public class Node{
+    public class Node {
         String data;
         Node next;
 
@@ -77,8 +79,33 @@ public class PraticeLL {
     public int getSize() {
         return size;
     }
+
+    public void addInMiddle(int index, String data) {
+        if (index > size || index < 0) {
+            System.out.println("Invalid Index value");
+            return;
+        }
+        size++;
+
+        Node newNode = new Node(data);
+        if (head == null || index == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node currNode = head;
+        for (int i = 1; i < index; i++) {
+            if (i == index - 1) {
+                Node nextNode = currNode.next;
+                currNode.next = newNode;
+                newNode.next = nextNode;
+                break;
+            }
+            currNode = currNode.next;
+        }
+    }
     public static void main(String[] args) {
-        PraticeLL list = new PraticeLL();
+        InsertLL list = new InsertLL();
 
         list.addLast("is");
         list.addLast("a");
@@ -86,16 +113,20 @@ public class PraticeLL {
 
         list.printList();
 
-        list.addFisrt("This");
-
+        list.addInMiddle(0, "This");
         list.printList();
 
         System.out.println(list.getSize());
-        list.removeFirst();
-
         list.printList();
 
-        list.removeLast();
+        list.addInMiddle(5, "for me");
         list.printList();
+
+
+        list.addInMiddle(6, "I want to learn LinkedList from scratch");
+        list.printList();
+        System.out.println(list.getSize());
     }
 }
+
+
