@@ -1,4 +1,3 @@
-
 public class RemoveNthFromEnd {
     public static class ListNode {
         int val;
