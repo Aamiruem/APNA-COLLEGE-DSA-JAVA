@@ -12,7 +12,7 @@ public class RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null || head.next == null) {
             return null;
-        }
+        } 
 
         int size = 0;
         ListNode temp = head;
